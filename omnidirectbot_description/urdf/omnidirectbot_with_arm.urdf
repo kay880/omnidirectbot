@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="omnidirectbot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0159721095649099 0.00224275619197631 0.1345375772092"
+        rpy="0 0 0" />
+      <mass
+        value="0.828550966382806" />
+      <inertia
+        ixx="0.00274004667548087"
+        ixy="2.8115139611349E-06"
+        ixz="6.72388559675742E-08"
+        iyy="0.00289809377513454"
+        iyz="2.13313382622723E-06"
+        izz="0.00505022876581928" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="caster_link1">
+    <inertial>
+      <origin
+        xyz="-0.0155552849466845 -0.0590998386941178 -4.84880240054358E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0799093668159606" />
+      <inertia
+        ixx="2.04076055004472E-05"
+        ixy="4.58261027105807E-06"
+        ixz="1.13538002349658E-10"
+        iyy="2.05066023129978E-05"
+        iyz="-7.52578086408992E-11"
+        izz="2.39023505326146E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/caster_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/caster_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="caster_joint1"
+    type="revolute">
+    <origin
+      xyz="-0.08181 0.099193 0.17623"
+      rpy="1.5708 0 -0.7854" />
+    <parent
+      link="base_link" />
+    <child
+      link="caster_link1" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wheel_link1">
+    <inertial>
+      <origin
+        xyz="2.40854054799067E-06 -1.56676912355103E-06 -0.00303861065239627"
+        rpy="0 0 0" />
+      <mass
+        value="0.0450942716330638" />
+      <inertia
+        ixx="1.52670658972737E-05"
+        ixy="7.70178129590836E-10"
+        ixz="-9.81587682242567E-10"
+        iyy="1.52692704899531E-05"
+        iyz="6.47560386175647E-10"
+        izz="2.6872754179264E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/wheel_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/wheel_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_joint1"
+    type="continuous">
+    <origin
+      xyz="0 -0.080086 0"
+      rpy="-1.5708 -0.84881 -1.5708" />
+    <parent
+      link="caster_link1" />
+    <child
+      link="wheel_link1" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="caster_link2">
+    <inertial>
+      <origin
+        xyz="-0.0155552849407855 -0.05909983905751 -4.8488152321613E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0799093668004115" />
+      <inertia
+        ixx="2.04076055002732E-05"
+        ixy="4.5826102710524E-06"
+        ixz="1.13535685052168E-10"
+        iyy="2.05066023128727E-05"
+        iyz="-7.52578170240386E-11"
+        izz="2.39023505324843E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/caster_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/caster_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="caster_joint2"
+    type="revolute">
+    <origin
+      xyz="0.11405 0.099122 0.17623"
+      rpy="1.5708 0 -2.3562" />
+    <parent
+      link="base_link" />
+    <child
+      link="caster_link2" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wheel_link2">
+    <inertial>
+      <origin
+        xyz="-8.86769340457949E-07 -2.7338066356658E-06 -0.00303861109042136"
+        rpy="0 0 0" />
+      <mass
+        value="0.0450942715750492" />
+      <inertia
+        ixx="1.52695041439647E-05"
+        ixy="-1.19409694320958E-10"
+        ixz="3.70462080070691E-10"
+        iyy="1.52668318805047E-05"
+        iyz="1.11627420840805E-09"
+        izz="2.68727541461807E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/wheel_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/wheel_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_joint2"
+    type="continuous">
+    <origin
+      xyz="0 -0.080086 0"
+      rpy="1.5708 -0.81739 1.5708" />
+    <parent
+      link="caster_link2" />
+    <child
+      link="wheel_link2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="caster_link3">
+    <inertial>
+      <origin
+        xyz="-0.0155552850671327 -0.0590998391449928 -4.84882023318867E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0799093671374404" />
+      <inertia
+        ixx="2.04076055040449E-05"
+        ixy="4.58261027107902E-06"
+        ixz="1.13534672037185E-10"
+        iyy="2.05066023156955E-05"
+        iyz="-7.52578205938046E-11"
+        izz="2.39023505353079E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/caster_link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/caster_link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="caster_joint3"
+    type="revolute">
+    <origin
+      xyz="-0.081881 -0.096667 0.17623"
+      rpy="1.5708 0 0.7854" />
+    <parent
+      link="base_link" />
+    <child
+      link="caster_link3" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wheel_link3">
+    <inertial>
+      <origin
+        xyz="-2.82887973858392E-06 -4.89261457944923E-07 -0.00303861196716623"
+        rpy="0 0 0" />
+      <mass
+        value="0.0450942715746105" />
+      <inertia
+        ixx="1.52673097667287E-05"
+        ixy="-1.0367335073758E-09"
+        ixz="1.1592980387725E-09"
+        iyy="1.52690255862927E-05"
+        iyz="1.92220470125054E-10"
+        izz="2.68727541458412E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/wheel_link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/wheel_link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_joint3"
+    type="continuous">
+    <origin
+      xyz="0 -0.080086 0"
+      rpy="1.5708 -0.036844 1.5708" />
+    <parent
+      link="caster_link3" />
+    <child
+      link="wheel_link3" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="caster_link4">
+    <inertial>
+      <origin
+        xyz="-0.0155552848609414 -0.0590998390064758 -5.48488182232632E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0799093666079426" />
+      <inertia
+        ixx="2.04076054981193E-05"
+        ixy="4.58261027096989E-06"
+        ixz="1.13537469331306E-10"
+        iyy="2.05066023113094E-05"
+        iyz="-7.52578107495066E-11"
+        izz="2.39023505309242E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/caster_link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/caster_link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="caster_joint4"
+    type="revolute">
+    <origin
+      xyz="0.11409 -0.096631 0.17623"
+      rpy="1.5708 0 2.3562" />
+    <parent
+      link="base_link" />
+    <child
+      link="caster_link4" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wheel_link4">
+    <inertial>
+      <origin
+        xyz="0.00303861196739572 1.95956082350152E-06 -2.09745763153635E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0450942715735576" />
+      <inertia
+        ixx="2.68727541461959E-05"
+        ixy="8.08074819096868E-10"
+        ixz="-8.52983778452163E-10"
+        iyy="1.52689336034599E-05"
+        iyz="1.10666062120856E-09"
+        izz="1.52674017498127E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/wheel_link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/wheel_link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_joint4"
+    type="continuous">
+    <origin
+      xyz="0 -0.080086 -5E-05"
+      rpy="1.0701 0 -3.1416" />
+    <parent
+      link="caster_link4" />
+    <child
+      link="wheel_link4" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="arm_link1">
+    <inertial>
+      <origin
+        xyz="-0.000752026190226237 0.0180936775412316 -0.0011577321151639"
+        rpy="0 0 0" />
+      <mass
+        value="0.0651397661322798" />
+      <inertia
+        ixx="2.43954882193296E-05"
+        ixy="-4.54900131538805E-08"
+        ixz="2.84725500162364E-08"
+        iyy="3.74885604342254E-05"
+        iyz="3.76202075378381E-08"
+        izz="2.49928523588235E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/arm_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.996078431372549 0.996078431372549 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/arm_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_joint1"
+    type="revolute">
+    <origin
+      xyz="0.016085 0.0012277 0.17603"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="arm_link1" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="arm_link2">
+    <inertial>
+      <origin
+        xyz="-0.0912947093746102 -0.0182924123376454 -0.00966983332273864"
+        rpy="0 0 0" />
+      <mass
+        value="0.0938705648170834" />
+      <inertia
+        ixx="1.41599108093718E-05"
+        ixy="-7.2465795297169E-09"
+        ixz="-1.59852044361437E-06"
+        iyy="4.22627440455491E-05"
+        iyz="-3.52460708571515E-08"
+        izz="3.50681459235357E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/arm_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.996078431372549 0.996078431372549 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/arm_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_joint2"
+    type="revolute">
+    <origin
+      xyz="0 0.04625 0.0176"
+      rpy="1.5708 0 -1.5708" />
+    <parent
+      link="arm_link1" />
+    <child
+      link="arm_link2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="arm_link3">
+    <inertial>
+      <origin
+        xyz="-0.0182687991697674 -0.0135886829308107 0.0740296096450109"
+        rpy="0 0 0" />
+      <mass
+        value="0.0825405885709327" />
+      <inertia
+        ixx="2.90819800716655E-05"
+        ixy="6.1757199863465E-09"
+        ixz="3.29512143868356E-08"
+        iyy="2.36535279102476E-05"
+        iyz="2.33723868819152E-06"
+        izz="1.10874945911255E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/arm_link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.745098039215686 0.737254901960784 0.729411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/arm_link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_joint3"
+    type="revolute">
+    <origin
+      xyz="-0.137 0.0002 -0.04755"
+      rpy="2.9608 0 1.5708" />
+    <parent
+      link="arm_link2" />
+    <child
+      link="arm_link3" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="arm_link4">
+    <inertial>
+      <origin
+        xyz="0.0284610203255143 -0.0174036283745929 0.0480577312472342"
+        rpy="0 0 0" />
+      <mass
+        value="0.100613003618247" />
+      <inertia
+        ixx="5.68282223773968E-05"
+        ixy="-3.39222816961432E-08"
+        ixz="-1.01512579805851E-06"
+        iyy="1.67039081838444E-05"
+        iyz="-2.33334411272346E-07"
+        izz="6.12680798908221E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/arm_link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.996078431372549 0.996078431372549 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/arm_link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_joint4"
+    type="revolute">
+    <origin
+      xyz="0.0002 -0.024943 0.13598"
+      rpy="0 0.1808 -1.5708" />
+    <parent
+      link="arm_link3" />
+    <child
+      link="arm_link4" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="gripper_link1">
+    <inertial>
+      <origin
+        xyz="1.82964687844844E-08 0.00824933254630964 0.0184708003713731"
+        rpy="0 0 0" />
+      <mass
+        value="0.0180940684774838" />
+      <inertia
+        ixx="3.49410179132563E-06"
+        ixy="-1.5668377814591E-12"
+        ixz="4.95814443819984E-12"
+        iyy="4.94469935808064E-06"
+        iyz="1.27521217510343E-08"
+        izz="2.15398873703311E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/gripper_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/gripper_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gripper_joint1"
+    type="prismatic">
+    <origin
+      xyz="-0.00012864 -0.0713 0.1159"
+      rpy="-3.1416 0 3.1416" />
+    <parent
+      link="arm_link4" />
+    <child
+      link="gripper_link1" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-0.04"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="gripper_link2">
+    <inertial>
+      <origin
+        xyz="1.84123709057182E-08 0.00824933250548065 0.0184708003682835"
+        rpy="0 0 0" />
+      <mass
+        value="0.018094068316114" />
+      <inertia
+        ixx="3.49410178495327E-06"
+        ixy="-1.59500305785378E-12"
+        ixz="4.94062078701807E-12"
+        iyy="4.94469937522808E-06"
+        iyz="1.27521268723169E-08"
+        izz="2.15398877300651E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/gripper_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnidirectbot/meshes/gripper_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gripper_joint2"
+    type="prismatic">
+    <origin
+      xyz="-0.00010364 0.035723 0.11608"
+      rpy="3.1416 0 0" />
+    <parent
+      link="arm_link4" />
+    <child
+      link="gripper_link2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.04"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>
